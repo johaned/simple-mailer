@@ -3,13 +3,9 @@ class ContactForm
 
   attribute :rol, default: 'attendees'
   attribute :message
-  attribute :email_subject
+  attribute :subject
 
-  validates_presence_of :message, :rol, :email_subject
-
-  def format_sender
-    %("#{name}" <#{email}>)
-  end
+  validates_presence_of :message, :rol, :subject
 
   def send_it
     if valid?
