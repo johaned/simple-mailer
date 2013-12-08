@@ -1,0 +1,12 @@
+development: &default_settings
+  account:
+  password:
+
+staging:
+  <<: *default_settings
+
+test:
+  <<: *default_settings
+
+production:
+  <<: *default_settings

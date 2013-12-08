@@ -16,3 +16,6 @@
 
 # Ignore the idea folder
 .idea/
+
+# mailer config
+config/email_provider.yml

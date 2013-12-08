@@ -5,6 +5,6 @@
     %h1
       Hola
     %p
-      = @contact.message
+      = simple_format BlueCloth.new(@contact.message).to_html
       %br
     %p

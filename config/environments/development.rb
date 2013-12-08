@@ -33,8 +33,8 @@ Mailer::Application.configure do
       address: 'smtp.gmail.com',
       port: 587,
       domain: 'railgirls.com',
-      user_name: 'test@codescrum.com',
-      password: 'codescrumemailstuff8',
+      user_name: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['account'],
+      password: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['password'],
       authentication: :plain,
       enable_starttls_auto: true
   }
