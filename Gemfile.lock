@@ -14,6 +14,9 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
+    active_attr (0.8.2)
+      activemodel (>= 3.0.2, < 4.1)
+      activesupport (>= 3.0.2, < 4.1)
     activemodel (3.2.15)
       activesupport (= 3.2.15)
       builder (~> 3.0.0)
@@ -217,6 +220,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_attr
   binding_of_caller
   bson_ext
   capybara
@@ -230,6 +234,7 @@ DEPENDENCIES
   mongoid-rspec
   quiet_assets
   rails (= 3.2.15)
+  sass
   sass-rails (~> 3.2.3)
   spork-rails
   therubyracer
