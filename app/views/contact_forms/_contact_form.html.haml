@@ -1,0 +1,22 @@
+.contact-form
+  %h3 Contact us
+  = simple_form_for @contact_form do |f|
+    - if @contact_form.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@contact_form.errors.count, "error")} prohibited this document from being saved:"
+        %ul
+          - @contact_form.errors.full_messages.each do |msg|
+            %li= msg
+    .form-inputs
+      .row-fluid
+        .span12
+          .container-input_special.user_icon.width_autotune{class: "#{'input_error_special' if resource.errors[:name].present?}"}
+            = f.input :name, :required => true, label: false, input_html: { class: 'special_input_session' }, placeholder: t(:contact_name_placeholder)
+          .container-input_special.email_icon.width_autotune{class: "#{'input_error_special' if resource.errors[:email].present?}"}
+            = f.input :email, :required => true, :autofocus => true, label: false, input_html: { class: 'special_input_session' }, placeholder: t(:email_placeholder)
+          .container-textarea_special.container-textarea_special_label.desc_icon
+            = f.input :message, as: :text, label: false, input_html: {rows: 3, class: 'special_textarea special_doc_textarea'}, placeholder: t(:contact_email_placeholder)
+      .row-fluid
+        .span12
+          .form-actions.no_background_in_form-actions.pull-right.no_margin
+            = f.submit :submit, class: 'btn btn-large btn-primary'

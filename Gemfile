@@ -7,7 +7,8 @@ gem 'mail_form'
 gem 'sass'
 gem 'active_attr'
 gem 'jquery-rails'
-
+gem 'simple_form'
+gem 'bluecloth'
 
 # Gems used only for assets and not required
 # in production environments by default.
