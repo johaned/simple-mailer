@@ -28,4 +28,18 @@ Mailer::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.action_mailer.smtp_settings = {
+      address: 'smtp.gmail.com',
+      port: 587,
+      domain: 'railgirls.com',
+      user_name: 'test@codescrum.com',
+      password: 'codescrumemailstuff8',
+      authentication: :plain,
+      enable_starttls_auto: true
+  }
+
+  config.action_mailer.default_url_options = {
+      host: 'localhost'
+  }
 end
