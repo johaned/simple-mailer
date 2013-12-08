@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  rol_placeholder: "Choose your Target Rol"
+  email_placeholder: "Write your Subject"
+  message_placeholder: "Write your message in Markdown Format"
