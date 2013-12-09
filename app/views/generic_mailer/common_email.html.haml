@@ -2,9 +2,17 @@
   %head
     %meta{content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}
   %body
-    %h1
-      Hola
-    %p
-      = simple_format BlueCloth.new(@contact.message).to_html
-      %br
-    %p
+    .common-template
+      .header{style: "background-color: #E82323; width: 100%; height: 130px"}
+        .title{style: 'padding: 20px; font-weight: bold; font-size: 30px; color: #FFFFFF;'}
+          %p{style: 'font-size: 15px'} Popayán 2013
+          = image_tag 'http://railsgirls.com/images/railsgirls-logo.png'
+      .main-image{align: 'center', style: "width: -moz-calc(100% - 10px); width: calc(100% - 10px); width: -webkit-calc(100% - 10px); height: 200px; text-align: center; border: #E82323 solid 5px;"}
+        = image_tag 'http://railsgirls.com/images/rg-popayan-evt.png', height: '199', width: '300'
+      %p
+        = simple_format BlueCloth.new(@contact.message).to_html
+        %br
+      %p
+      .end{style: "background-color: #E82323; width: 100%; height: 40px;"}
+        %br
+        %p{style: 'color: #E82323;'} .
