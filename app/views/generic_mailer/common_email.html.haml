@@ -3,7 +3,7 @@
     %meta{content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}
   %body
     .common-template
-      .header{style: "background-color: #E82323; width: 100%; height: 130px"}
+      .header{style: 'background-color: #E82323; width: 100%; height: 130px'}
         .title{style: 'padding: 20px; font-weight: bold; font-size: 30px; color: #FFFFFF;'}
           %p{style: 'font-size: 15px'} Popayán 2013
           = image_tag 'http://railsgirls.com/images/railsgirls-logo.png'
@@ -14,6 +14,9 @@
         = simple_format BlueCloth.new(@contact.message).to_html
         %br
       %p
-      .end{style: "background-color: #E82323; width: 100%; height: 40px;"}
-        %br
-        %p{style: 'color: #E82323;'} .
+      .end{style: "background-color: #E82323; width: 100%; height: 50px; padding: 20px 0px 20px 0px; text-align: right;"}
+        %a{href: 'https://www.facebook.com/pages/Rails-Girls-Popay%C3%A1n/254976991320185'}
+          = image_tag 'https://cdn3.iconfinder.com/data/icons/pyconic-icons-3-1/512/facebook-circle-512.png', height: '50', width: '50'
+        %a{href: 'https://twitter.com/rgirlspopayan'}
+          = image_tag 'https://cdn3.iconfinder.com/data/icons/pyconic-icons-3-1/512/twitter-circle-512.png', height: '50', width: '50', style: 'padding-right: 20px'
+
