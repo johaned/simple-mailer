@@ -9,7 +9,7 @@ class ContactForm
 
   def send_it
     if valid?
-      GenericMailer.common_email(self).deliver
+      GenericMailer.send_common_email(self)
     end
   end
 end
