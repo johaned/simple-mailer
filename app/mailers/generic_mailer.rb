@@ -1,10 +1,9 @@
 class GenericMailer < ActionMailer::Base
 
   def self.send_common_email(contact_form)
-    @contact = contact_form
-    recipients = Person.by_rol(@contact.rol)
+    recipients = Person.by_rol(contact_form.rol)
     recipients.each do |recipient|
-      common_email(recipient, @contact).deliver
+      common_email(recipient, contact_form).deliver
     end
   end
 
