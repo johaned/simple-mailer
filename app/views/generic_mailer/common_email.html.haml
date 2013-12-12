@@ -9,8 +9,8 @@
           = image_tag 'http://railsgirls.com/images/railsgirls-logo.png'
       .main-image{align: 'center', style: "width: -moz-calc(100% - 10px); width: calc(100% - 10px); width: -webkit-calc(100% - 10px); height: 200px; text-align: center; border: #E82323 solid 5px;"}
         = image_tag 'http://railsgirls.com/images/rg-popayan-evt.png', height: '199', width: '300'
+      %h2= "Hola #{@recipient.name}!"
       %p
-        = "Hola #{@recipient.name}!"
         = simple_format BlueCloth.new(@contact.message).to_html
         %br
       %p
