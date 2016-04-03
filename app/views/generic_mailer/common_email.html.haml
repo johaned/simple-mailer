@@ -3,18 +3,18 @@
     %meta{content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}
   %body
     .common-template
-      .header{style: 'background-color: #E82323; width: 100%; height: 130px'}
-        .title{style: 'padding: 20px; font-weight: bold; font-size: 30px; color: #FFFFFF;'}
-          %p{style: 'font-size: 15px'} Cali 2016
-          = image_tag 'http://railsgirls.com/images/railsgirls-logo.png', alt: 'Rails Girls'
-      .main-image{align: 'center', style: "width: -moz-calc(100% - 10px); width: calc(100% - 10px); width: -webkit-calc(100% - 10px); height: 200px; text-align: center; border: #E82323 solid 5px;"}
-        = image_tag 'http://railsgirls.com/images/rg-popayan-evt.png', height: '199', width: '300', alt: 'Railsmociónate y construye cosas increibles!'
+      .header{style: 'background-color: #CD2524; width: 100%;'}
+        .title{style: 'padding: 5px; font-weight: 100; font-size: 30px; color: #FFFFFF;'}
+          %p{style: 'font-size: 15px; text-align: right;'} 29 y 30 de Abril - Cali 2016
+          -# = image_tag 'http://railsgirls.com/images/railsgirls-logo.png', alt: 'Rails Girls'
+      .main-image{align: 'center', style: "width: -moz-calc(100% - 10px); width: calc(100% - 10px); width: -webkit-calc(100% - 10px); text-align: center; border: #CD2524 solid 5px; background-color: #CD2524;"}
+        = image_tag 'https://raw.githubusercontent.com/johaned/simple-mailer/b410555bdfed99580d8e8eab285b4a90a6d8b439/app/assets/images/common-template/mail-header.png', width: '100%', alt: 'Railsmociónate y construye cosas increibles!'
       %h2= "Hola #{@recipient.first_name}!"
       %p
         = simple_format BlueCloth.new(@contact.message).to_html
         %br
       %p
-      .end{style: "background-color: #E82323; width: 100%; height: 50px; padding: 20px 0px 20px 0px; text-align: right;"}
+      .end{style: "background-color: #CD2524; width: 100%; height: 50px; padding: 20px 0px 20px 0px; text-align: right;"}
         %a{href: 'https://www.facebook.com/RailsGirlsCali'}
           = image_tag 'https://cdn3.iconfinder.com/data/icons/pyconic-icons-3-1/512/facebook-circle-512.png', height: '50', width: '50', alt: 'F'
         %a{href: 'https://twitter.com/RailsGirlsCali'}
