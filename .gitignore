@@ -6,6 +6,7 @@
 
 # Ignore bundler config
 /.bundle
+config/mongoid.yml
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -19,3 +20,4 @@
 
 # mailer config
 config/email_provider.yml
+people.csv

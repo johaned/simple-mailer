@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.15'
-gem 'mongoid'
-gem 'bson_ext'
+ruby '2.3.0'
+
+gem 'rails', '4.2.6'
+gem 'mongoid', "~> 4.0.0"
 gem 'mail_form'
 gem 'sass'
 gem 'active_attr'
@@ -13,8 +14,8 @@ gem 'bluecloth'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails'
+  gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
@@ -24,7 +25,7 @@ end
 
 
 group :test, :development do
-  gem 'jazz_hands'
+  gem 'jazz_hands', github: 'jkrmr/jazz_hands'
 end
 
 group :development, :staging do
@@ -36,6 +37,5 @@ end
 group :test do
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'mongoid-rspec'
   gem 'spork-rails'
 end
