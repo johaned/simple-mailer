@@ -9,7 +9,9 @@
 require 'csv'
 
 CSV.foreach(File.join(Rails.root, 'people.csv'), headers: true) do |row|
-  Person.find_or_create_by name: row['Name'].downcase, email: row['Email'].downcase, gender: row['Gender']
+  p = Person.find_or_create_by name: row['Name'].downcase, email: row['Email'].downcase, gender: row['Gender']
+  welcome = row['Welcome'] == 'TRUE'
+  p.update_attribute(:welcome_sent, welcome) unless p.welcome_sent == welcome
 end
 
 Person.find_or_create_by name: 'Johan Tique', email: 'johan.tique@gmail.com', gender: 'm', rol: 'assistant'
