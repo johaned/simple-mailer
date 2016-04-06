@@ -9,7 +9,8 @@
           -# = image_tag 'http://railsgirls.com/images/railsgirls-logo.png', alt: 'Rails Girls'
       .main-image{align: 'center', style: "width: -moz-calc(100% - 10px); width: calc(100% - 10px); width: -webkit-calc(100% - 10px); text-align: center; border: #CD2524 solid 5px; background-color: #CD2524;"}
         = image_tag 'https://raw.githubusercontent.com/johaned/simple-mailer/b410555bdfed99580d8e8eab285b4a90a6d8b439/app/assets/images/common-template/mail-header.png', width: '100%', alt: 'Railsmociónate y construye cosas increibles!'
-      %h2= "Hola #{@recipient.first_name}!"
+      - greeting = @recipient.first_name.present? ? "Hola #{@recipient.first_name}!" : 'Hola!'
+      %h2= greeting
       %p
         = simple_format BlueCloth.new(@contact.message).to_html
         %br

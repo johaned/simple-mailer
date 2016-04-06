@@ -21,3 +21,4 @@ config/mongoid.yml
 # mailer config
 config/email_provider.yml
 people.csv
+possible_attendants.csv

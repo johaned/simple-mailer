@@ -14,7 +14,7 @@ class Person
   scope :by_rol, lambda{|rol| where(rol: rol)}
 
   def first_name
-    name.split(' ')[0].capitalize
+    name.present? ? name.split(' ')[0].capitalize : ''
   end
 
 end
