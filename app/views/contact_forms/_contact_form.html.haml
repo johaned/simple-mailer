@@ -12,6 +12,7 @@
         .span12
           = f.input :rol, required: true, label: false, autofocus: true, collection: %w(assistant coach admin attendant) , placeholder: t(:rol_placeholder)
           = f.input :subject, required: true, placeholder: t(:email_placeholder)
+          = f.input :welcome, as: :boolean
           = f.input :message, as: :text, label: false, placeholder: t(:message_placeholder)
       .row-fluid
         .span12

@@ -1,9 +1,11 @@
 class ContactForm
   include ActiveAttr::Model
+  include ActiveAttr::TypecastedAttributes
 
   attribute :rol, default: 'attendees'
   attribute :message
   attribute :subject
+  attribute :welcome, type: Boolean
 
   validates_presence_of :message, :rol, :subject
 
