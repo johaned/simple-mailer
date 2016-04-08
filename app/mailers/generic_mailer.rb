@@ -5,12 +5,13 @@ class GenericMailer < ActionMailer::Base
     # binding.pry
     recipients.each do |recipient|
       common_email(recipient, contact_form).deliver
+      recipient.update_attribute(:welcome_sent, true) if contact_form.welcome
     end
   end
 
   def common_email(recipient, contact)
     @recipient = recipient
     @contact = contact
-    mail(from: 'rails.girls@codescrum.com', :to => @recipient.email, :subject => @contact.subject)
+    mail(from: 'cali@railsgirls.com', :to => @recipient.email, :subject => @contact.subject)
   end
 end
