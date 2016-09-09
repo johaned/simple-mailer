@@ -60,18 +60,24 @@ Mailer::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+
+  email_provider = YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))['production']
+
   config.action_mailer.smtp_settings = {
-    address: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['smtp'],
-    port: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['port'],
-    domain: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['domain'],
-    user_name: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['account'],
-    password: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['password'],
+    address: email_provider['address'],
+    port: email_provider['port'],
+    domain: email_provider['domain'],
+    user_name: email_provider['account'],
+    password: email_provider['password'],
     authentication: :plain,
     enable_starttls_auto: true
   }
 
   config.action_mailer.default_url_options = {
-    host: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['domain']
+    host: email_provider['domain']
   }
 
 end

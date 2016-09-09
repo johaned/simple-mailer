@@ -16,7 +16,7 @@ Mailer::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -30,18 +30,25 @@ Mailer::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+
+  email_provider = YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))['development']
 
   config.action_mailer.smtp_settings = {
-      address: 'smtp.gmail.com',
-      port: 587,
-      domain: 'railgirls.com',
-      user_name: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['account'],
-      password: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['password'],
-      authentication: :plain,
-      enable_starttls_auto: true
+    enable_starttls_auto: true,
+    address: email_provider['address'],
+    port: email_provider['port'],
+    domain: email_provider['domain'],
+    user_name: email_provider['account'],
+    password: email_provider['password'],
+    authentication: :plain,
+    ssl: true,
+    tls: true,
   }
 
   config.action_mailer.default_url_options = {
-      host: 'localhost'
+    host: 'localhost:3000'
   }
 end

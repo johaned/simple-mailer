@@ -2,6 +2,8 @@ development: &default_settings
   account: the_email
   password: the_password
   domain: the_domain
+  port: the_port
+  address: the_smtp_server_address
 
 staging:
   <<: *default_settings
@@ -14,5 +16,5 @@ production:
   account: <%= ENV['EMAIL'] %>
   password: <%= ENV['PASSWORD'] %>
   domain: <%= ENV['DOMAIN'] %>
-  smtp: <%= ENV['SMTP'] %>
+  address: <%= ENV['ADDRESS'] %>
   port: <%= ENV['PORT'] %>
