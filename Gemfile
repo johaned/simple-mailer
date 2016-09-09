@@ -10,6 +10,7 @@ gem 'active_attr'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'bluecloth'
+gem 'haml-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,7 +31,6 @@ end
 
 group :development, :staging do
   gem 'binding_of_caller'
-  gem 'haml-rails'
   gem 'quiet_assets'
 end
 
