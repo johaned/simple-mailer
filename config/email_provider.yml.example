@@ -14,3 +14,5 @@ production:
   account: <%= ENV['EMAIL'] %>
   password: <%= ENV['PASSWORD'] %>
   domain: <%= ENV['DOMAIN'] %>
+  smtp: <%= ENV['SMTP'] %>
+  port: <%= ENV['PORT'] %>

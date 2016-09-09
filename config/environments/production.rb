@@ -63,8 +63,8 @@ Mailer::Application.configure do
   config.log_level = :info
 
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
+    address: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['smtp'],
+    port: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['port'],
     domain: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['domain'],
     user_name: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['account'],
     password: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['password'],
