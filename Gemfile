@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 gem 'rails', '4.2.6'
-gem 'mongoid', "~> 4.0.0"
+gem 'mongoid', '~> 5.1.0'
 gem 'mail_form'
 gem 'sass'
 gem 'active_attr'
