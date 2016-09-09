@@ -42,7 +42,7 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'newrelic_rpm'
   gem 'unicorn'
+  gem 'rails_stdout_logging', '~> 0.0.5'
 end
 
