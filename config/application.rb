@@ -70,8 +70,13 @@ end
 ###### Heroku deployment hack ######
 # copy mongoid config example file into 'real' file
 if Rails.env.production?
+  # Mongo
   config_root = File.join(Rails.root, 'config')
   mongoid_example_path = File.join(config_root, 'mongoid.yml.example')
   mongoid_real_path = File.join(config_root, 'mongoid.yml')
   `cp #{mongoid_example_path} #{mongoid_real_path}`
+  # Email provider
+  email_provider_example_path = File.join(config_root, 'email_provider.yml.example')
+  email_provider_real_path = File.join(config_root, 'email_provider.yml')
+  `cp #{email_provider_example_path} #{email_provider_real_path}`
 end
