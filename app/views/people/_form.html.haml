@@ -11,9 +11,12 @@
     = f.text_field :name
   .field
     = f.label :rol
-    = f.select :rol, collection_select: %w(assistant coach admin attendant)
+    = f.select :rol, %w(assistant coach admin attendant)
   .field
     = f.label :email
     = f.text_field :email
+  .field
+    = f.label :gender
+    = f.select :gender, %w(f m)
   .actions
     = f.submit 'Save'
