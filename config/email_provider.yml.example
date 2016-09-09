@@ -1,6 +1,7 @@
 development: &default_settings
   account: the_email
   password: the_password
+  domain: the_domain
 
 staging:
   <<: *default_settings
@@ -12,3 +13,4 @@ production:
   <<: *default_settings
   account: <%= ENV['EMAIL'] %>
   password: <%= ENV['PASSWORD'] %>
+  domain: <%= ENV['DOMAIN'] %>
