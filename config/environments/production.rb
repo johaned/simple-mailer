@@ -60,8 +60,6 @@ Mailer::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.log_level = :info
-
   config.action_mailer.smtp_settings = {
     address: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['smtp'],
     port: YAML.load(File.read("#{Rails.root}/config/email_provider.yml"))[Rails.env]['port'],
