@@ -39,3 +39,10 @@ group :test do
   gem 'capybara-webkit'
   gem 'spork-rails'
 end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'newrelic_rpm'
+  gem 'unicorn'
+end
+

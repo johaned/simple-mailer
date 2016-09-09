@@ -69,7 +69,7 @@ end
 
 ###### Heroku deployment hack ######
 # copy mongoid config example file into 'real' file
-if Rails.env.production? || Rails.env.demo?
+if Rails.env.production?
   config_root = File.join(Rails.root, 'config')
   mongoid_example_path = File.join(config_root, 'mongoid.yml.example')
   mongoid_real_path = File.join(config_root, 'mongoid.yml')
