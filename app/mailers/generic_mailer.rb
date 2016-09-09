@@ -1,8 +1,10 @@
 class GenericMailer < ActionMailer::Base
   def self.send_common_email(contact_form)
-    recipients = Person.by_rol(contact_form.rol)
+    recipients = Person.by_rol(contact_form.rol).where(welcome_sent: false)
     recipients.each do |recipient|
+      puts recipient.name
       common_email(recipient, contact_form).deliver_now!
+      recipient.update_attribute :welcome_sent, true
     end
   end
 
